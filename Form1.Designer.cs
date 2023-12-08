@@ -28,354 +28,236 @@
         /// </summary>
         private void InitializeComponent()
         {
-            pnlInterest = new Panel();
+            components = new System.ComponentModel.Container();
+            contextMenuStrip1 = new ContextMenuStrip(components);
+            tabControl1 = new TabControl();
+            tabPage1 = new TabPage();
+            btncreate = new Button();
+            txtAddress = new TextBox();
+            txtID = new TextBox();
+            txtCustomerID = new TextBox();
+            txtName = new TextBox();
+            label4 = new Label();
             label3 = new Label();
             label2 = new Label();
             label1 = new Label();
-            compoundInterest = new Button();
-            simpleInterest = new Button();
-            textInterestRate = new TextBox();
-            textTime = new TextBox();
-            textPresentValue = new TextBox();
-            pnlInsideForm = new Panel();
-            label7 = new Label();
-            txtCustomerID = new TextBox();
-            label6 = new Label();
-            label5 = new Label();
-            label4 = new Label();
-            btncreate = new Button();
-            txtID = new TextBox();
-            txtAddress = new TextBox();
-            txtName = new TextBox();
-            pnlSearch = new Panel();
-            panel4 = new Panel();
-            btnConfirm = new Button();
-            rbtList = new RadioButton();
-            rbtSearch = new RadioButton();
-            rbtAdd = new RadioButton();
-            pnlListNames = new Panel();
-            lsbNames = new ListBox();
-            pnlInterest.SuspendLayout();
-            pnlInsideForm.SuspendLayout();
-            panel4.SuspendLayout();
-            pnlListNames.SuspendLayout();
+            tabPage2 = new TabPage();
+            tabPage3 = new TabPage();
+            tabPage4 = new TabPage();
+            tabPage5 = new TabPage();
+            tabPage6 = new TabPage();
+            tabPage7 = new TabPage();
+            tabControl1.SuspendLayout();
+            tabPage1.SuspendLayout();
             SuspendLayout();
             // 
-            // pnlInterest
+            // contextMenuStrip1
             // 
-            pnlInterest.BorderStyle = BorderStyle.FixedSingle;
-            pnlInterest.Controls.Add(label3);
-            pnlInterest.Controls.Add(label2);
-            pnlInterest.Controls.Add(label1);
-            pnlInterest.Controls.Add(compoundInterest);
-            pnlInterest.Controls.Add(simpleInterest);
-            pnlInterest.Controls.Add(textInterestRate);
-            pnlInterest.Controls.Add(textTime);
-            pnlInterest.Controls.Add(textPresentValue);
-            pnlInterest.ForeColor = SystemColors.ActiveCaptionText;
-            pnlInterest.Location = new Point(540, 22);
-            pnlInterest.Name = "pnlInterest";
-            pnlInterest.Size = new Size(265, 366);
-            pnlInterest.TabIndex = 0;
-            pnlInterest.Visible = false;
+            contextMenuStrip1.Name = "contextMenuStrip1";
+            contextMenuStrip1.Size = new Size(61, 4);
             // 
-            // label3
+            // tabControl1
             // 
-            label3.AutoSize = true;
-            label3.Location = new Point(18, 147);
-            label3.Name = "label3";
-            label3.Size = new Size(91, 15);
-            label3.TabIndex = 7;
-            label3.Text = "Interest rate %  :";
+            tabControl1.Controls.Add(tabPage1);
+            tabControl1.Controls.Add(tabPage2);
+            tabControl1.Controls.Add(tabPage3);
+            tabControl1.Controls.Add(tabPage4);
+            tabControl1.Controls.Add(tabPage5);
+            tabControl1.Controls.Add(tabPage6);
+            tabControl1.Controls.Add(tabPage7);
+            tabControl1.Location = new Point(12, 12);
+            tabControl1.Name = "tabControl1";
+            tabControl1.SelectedIndex = 0;
+            tabControl1.Size = new Size(815, 413);
+            tabControl1.TabIndex = 1;
             // 
-            // label2
+            // tabPage1
             // 
-            label2.AutoSize = true;
-            label2.Location = new Point(18, 92);
-            label2.Name = "label2";
-            label2.Size = new Size(39, 15);
-            label2.TabIndex = 6;
-            label2.Text = "Time :";
-            label2.TextAlign = ContentAlignment.MiddleLeft;
+            tabPage1.Controls.Add(btncreate);
+            tabPage1.Controls.Add(txtAddress);
+            tabPage1.Controls.Add(txtID);
+            tabPage1.Controls.Add(txtCustomerID);
+            tabPage1.Controls.Add(txtName);
+            tabPage1.Controls.Add(label4);
+            tabPage1.Controls.Add(label3);
+            tabPage1.Controls.Add(label2);
+            tabPage1.Controls.Add(label1);
+            tabPage1.Location = new Point(4, 24);
+            tabPage1.Name = "tabPage1";
+            tabPage1.Padding = new Padding(3);
+            tabPage1.Size = new Size(807, 385);
+            tabPage1.TabIndex = 0;
+            tabPage1.Text = "Add Customer";
+            tabPage1.UseVisualStyleBackColor = true;
             // 
-            // label1
+            // btncreate
             // 
-            label1.AutoSize = true;
-            label1.Location = new Point(18, 37);
-            label1.Name = "label1";
-            label1.Size = new Size(83, 15);
-            label1.TabIndex = 5;
-            label1.Text = "Present Value :";
+            btncreate.Location = new Point(415, 88);
+            btncreate.Name = "btncreate";
+            btncreate.Size = new Size(75, 23);
+            btncreate.TabIndex = 8;
+            btncreate.Text = "Confirm";
+            btncreate.UseVisualStyleBackColor = true;
+            btncreate.Click += btncreate_Click_1;
             // 
-            // compoundInterest
+            // txtAddress
             // 
-            compoundInterest.BackColor = SystemColors.ActiveCaption;
-            compoundInterest.ForeColor = SystemColors.MenuHighlight;
-            compoundInterest.Location = new Point(155, 252);
-            compoundInterest.Name = "compoundInterest";
-            compoundInterest.Size = new Size(104, 46);
-            compoundInterest.TabIndex = 4;
-            compoundInterest.Text = "Compound Interest";
-            compoundInterest.UseVisualStyleBackColor = false;
-            compoundInterest.Click += compoundInterest_Click;
+            txtAddress.Location = new Point(183, 133);
+            txtAddress.Name = "txtAddress";
+            txtAddress.Size = new Size(100, 23);
+            txtAddress.TabIndex = 7;
             // 
-            // simpleInterest
+            // txtID
             // 
-            simpleInterest.BackColor = SystemColors.ActiveCaption;
-            simpleInterest.ForeColor = SystemColors.MenuHighlight;
-            simpleInterest.Location = new Point(18, 252);
-            simpleInterest.Name = "simpleInterest";
-            simpleInterest.Size = new Size(104, 46);
-            simpleInterest.TabIndex = 3;
-            simpleInterest.Text = "Simple Interest";
-            simpleInterest.UseVisualStyleBackColor = false;
-            simpleInterest.Click += simpleInterest_Click;
-            // 
-            // textInterestRate
-            // 
-            textInterestRate.Location = new Point(132, 144);
-            textInterestRate.Name = "textInterestRate";
-            textInterestRate.Size = new Size(100, 23);
-            textInterestRate.TabIndex = 2;
-            // 
-            // textTime
-            // 
-            textTime.Location = new Point(132, 89);
-            textTime.Name = "textTime";
-            textTime.Size = new Size(100, 23);
-            textTime.TabIndex = 1;
-            // 
-            // textPresentValue
-            // 
-            textPresentValue.Location = new Point(132, 34);
-            textPresentValue.Name = "textPresentValue";
-            textPresentValue.Size = new Size(100, 23);
-            textPresentValue.TabIndex = 0;
-            // 
-            // pnlInsideForm
-            // 
-            pnlInsideForm.Controls.Add(label7);
-            pnlInsideForm.Controls.Add(txtCustomerID);
-            pnlInsideForm.Controls.Add(label6);
-            pnlInsideForm.Controls.Add(label5);
-            pnlInsideForm.Controls.Add(label4);
-            pnlInsideForm.Controls.Add(btncreate);
-            pnlInsideForm.Controls.Add(txtID);
-            pnlInsideForm.Controls.Add(txtAddress);
-            pnlInsideForm.Controls.Add(txtName);
-            pnlInsideForm.Location = new Point(269, 22);
-            pnlInsideForm.Name = "pnlInsideForm";
-            pnlInsideForm.Size = new Size(251, 416);
-            pnlInsideForm.TabIndex = 1;
-            pnlInsideForm.Visible = false;
-            // 
-            // label7
-            // 
-            label7.AutoSize = true;
-            label7.Location = new Point(23, 101);
-            label7.Name = "label7";
-            label7.Size = new Size(49, 15);
-            label7.TabIndex = 8;
-            label7.Text = "Address";
+            txtID.Location = new Point(183, 93);
+            txtID.Name = "txtID";
+            txtID.Size = new Size(100, 23);
+            txtID.TabIndex = 6;
             // 
             // txtCustomerID
             // 
-            txtCustomerID.Location = new Point(118, 228);
+            txtCustomerID.Location = new Point(183, 55);
             txtCustomerID.Name = "txtCustomerID";
             txtCustomerID.Size = new Size(100, 23);
-            txtCustomerID.TabIndex = 7;
+            txtCustomerID.TabIndex = 5;
             // 
-            // label6
+            // txtName
             // 
-            label6.AutoSize = true;
-            label6.Location = new Point(23, 231);
-            label6.Name = "label6";
-            label6.Size = new Size(73, 15);
-            label6.TabIndex = 6;
-            label6.Text = "Customer ID";
-            label6.Click += label6_Click;
-            // 
-            // label5
-            // 
-            label5.AutoSize = true;
-            label5.Location = new Point(23, 160);
-            label5.Name = "label5";
-            label5.Size = new Size(18, 15);
-            label5.TabIndex = 5;
-            label5.Text = "ID";
+            txtName.Location = new Point(183, 17);
+            txtName.Name = "txtName";
+            txtName.Size = new Size(100, 23);
+            txtName.TabIndex = 4;
+            txtName.TextChanged += textBox1_TextChanged;
             // 
             // label4
             // 
             label4.AutoSize = true;
-            label4.Location = new Point(23, 38);
+            label4.Location = new Point(36, 136);
             label4.Name = "label4";
-            label4.Size = new Size(89, 15);
-            label4.TabIndex = 4;
-            label4.Text = "Name Surname";
+            label4.Size = new Size(49, 15);
+            label4.TabIndex = 3;
+            label4.Text = "Address";
             // 
-            // btncreate
+            // label3
             // 
-            btncreate.Location = new Point(159, 390);
-            btncreate.Name = "btncreate";
-            btncreate.Size = new Size(75, 23);
-            btncreate.TabIndex = 3;
-            btncreate.Text = "Create";
-            btncreate.UseVisualStyleBackColor = true;
-            btncreate.Click += btncreate_Click;
+            label3.AutoSize = true;
+            label3.Location = new Point(36, 96);
+            label3.Name = "label3";
+            label3.Size = new Size(18, 15);
+            label3.TabIndex = 2;
+            label3.Text = "ID";
             // 
-            // txtID
+            // label2
             // 
-            txtID.Location = new Point(118, 157);
-            txtID.Name = "txtID";
-            txtID.Size = new Size(100, 23);
-            txtID.TabIndex = 2;
+            label2.AutoSize = true;
+            label2.Location = new Point(36, 58);
+            label2.Name = "label2";
+            label2.Size = new Size(73, 15);
+            label2.TabIndex = 1;
+            label2.Text = "Customer ID";
             // 
-            // txtAddress
+            // label1
             // 
-            txtAddress.Location = new Point(118, 93);
-            txtAddress.Name = "txtAddress";
-            txtAddress.Size = new Size(100, 23);
-            txtAddress.TabIndex = 1;
+            label1.AutoSize = true;
+            label1.Location = new Point(36, 20);
+            label1.Name = "label1";
+            label1.Size = new Size(89, 15);
+            label1.TabIndex = 0;
+            label1.Text = "Name Surname";
             // 
-            // txtName
+            // tabPage2
             // 
-            txtName.Location = new Point(118, 38);
-            txtName.Name = "txtName";
-            txtName.Size = new Size(100, 23);
-            txtName.TabIndex = 0;
+            tabPage2.Location = new Point(4, 24);
+            tabPage2.Name = "tabPage2";
+            tabPage2.Padding = new Padding(3);
+            tabPage2.Size = new Size(807, 385);
+            tabPage2.TabIndex = 1;
+            tabPage2.Text = "Delete Customer";
+            tabPage2.UseVisualStyleBackColor = true;
             // 
-            // pnlSearch
+            // tabPage3
             // 
-            pnlSearch.ImeMode = ImeMode.On;
-            pnlSearch.Location = new Point(829, 22);
-            pnlSearch.Name = "pnlSearch";
-            pnlSearch.Size = new Size(259, 366);
-            pnlSearch.TabIndex = 2;
-            pnlSearch.Visible = false;
+            tabPage3.Location = new Point(4, 24);
+            tabPage3.Name = "tabPage3";
+            tabPage3.Padding = new Padding(3);
+            tabPage3.Size = new Size(807, 385);
+            tabPage3.TabIndex = 2;
+            tabPage3.Text = "Search Customer";
+            tabPage3.UseVisualStyleBackColor = true;
             // 
-            // panel4
+            // tabPage4
             // 
-            panel4.Controls.Add(btnConfirm);
-            panel4.Controls.Add(rbtList);
-            panel4.Controls.Add(rbtSearch);
-            panel4.Controls.Add(rbtAdd);
-            panel4.Location = new Point(12, 22);
-            panel4.Name = "panel4";
-            panel4.Size = new Size(240, 366);
-            panel4.TabIndex = 3;
+            tabPage4.Location = new Point(4, 24);
+            tabPage4.Name = "tabPage4";
+            tabPage4.Padding = new Padding(3);
+            tabPage4.Size = new Size(807, 385);
+            tabPage4.TabIndex = 3;
+            tabPage4.Text = "Add Loan to Customer";
+            tabPage4.UseVisualStyleBackColor = true;
             // 
-            // btnConfirm
+            // tabPage5
             // 
-            btnConfirm.Location = new Point(21, 244);
-            btnConfirm.Name = "btnConfirm";
-            btnConfirm.Size = new Size(75, 23);
-            btnConfirm.TabIndex = 3;
-            btnConfirm.Text = "Confirm";
-            btnConfirm.UseVisualStyleBackColor = true;
-            btnConfirm.Click += btnConfirm_Click;
+            tabPage5.Location = new Point(4, 24);
+            tabPage5.Name = "tabPage5";
+            tabPage5.Padding = new Padding(3);
+            tabPage5.Size = new Size(807, 385);
+            tabPage5.TabIndex = 4;
+            tabPage5.Text = "Delete Loan to Customer";
+            tabPage5.UseVisualStyleBackColor = true;
             // 
-            // rbtList
+            // tabPage6
             // 
-            rbtList.AutoSize = true;
-            rbtList.Location = new Point(25, 144);
-            rbtList.Name = "rbtList";
-            rbtList.Size = new Size(120, 19);
-            rbtList.TabIndex = 2;
-            rbtList.TabStop = true;
-            rbtList.Text = "List All Customers";
-            rbtList.UseVisualStyleBackColor = true;
+            tabPage6.Location = new Point(4, 24);
+            tabPage6.Name = "tabPage6";
+            tabPage6.Padding = new Padding(3);
+            tabPage6.Size = new Size(807, 385);
+            tabPage6.TabIndex = 5;
+            tabPage6.Text = "List Loans of Customers";
+            tabPage6.UseVisualStyleBackColor = true;
             // 
-            // rbtSearch
+            // tabPage7
             // 
-            rbtSearch.AutoSize = true;
-            rbtSearch.Location = new Point(25, 96);
-            rbtSearch.Name = "rbtSearch";
-            rbtSearch.Size = new Size(115, 19);
-            rbtSearch.TabIndex = 1;
-            rbtSearch.TabStop = true;
-            rbtSearch.Text = "Search Customer";
-            rbtSearch.UseVisualStyleBackColor = true;
-            // 
-            // rbtAdd
-            // 
-            rbtAdd.AutoSize = true;
-            rbtAdd.Location = new Point(25, 43);
-            rbtAdd.Name = "rbtAdd";
-            rbtAdd.Size = new Size(102, 19);
-            rbtAdd.TabIndex = 0;
-            rbtAdd.TabStop = true;
-            rbtAdd.Text = "Add Customer";
-            rbtAdd.UseVisualStyleBackColor = true;
-            rbtAdd.CheckedChanged += radioButton1_CheckedChanged;
-            // 
-            // pnlListNames
-            // 
-            pnlListNames.Controls.Add(lsbNames);
-            pnlListNames.Location = new Point(1107, 22);
-            pnlListNames.Name = "pnlListNames";
-            pnlListNames.Size = new Size(251, 366);
-            pnlListNames.TabIndex = 4;
-            pnlListNames.Visible = false;
-            // 
-            // lsbNames
-            // 
-            lsbNames.FormattingEnabled = true;
-            lsbNames.ItemHeight = 15;
-            lsbNames.Location = new Point(20, 35);
-            lsbNames.Name = "lsbNames";
-            lsbNames.Size = new Size(211, 289);
-            lsbNames.TabIndex = 0;
+            tabPage7.Location = new Point(4, 24);
+            tabPage7.Name = "tabPage7";
+            tabPage7.Padding = new Padding(3);
+            tabPage7.Size = new Size(807, 385);
+            tabPage7.TabIndex = 6;
+            tabPage7.Text = "Update Customer";
+            tabPage7.UseVisualStyleBackColor = true;
             // 
             // Form1
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(1370, 450);
-            Controls.Add(pnlListNames);
-            Controls.Add(panel4);
-            Controls.Add(pnlSearch);
-            Controls.Add(pnlInsideForm);
-            Controls.Add(pnlInterest);
+            ClientSize = new Size(949, 450);
+            Controls.Add(tabControl1);
             Name = "Form1";
             Text = "Form1";
-            pnlInterest.ResumeLayout(false);
-            pnlInterest.PerformLayout();
-            pnlInsideForm.ResumeLayout(false);
-            pnlInsideForm.PerformLayout();
-            panel4.ResumeLayout(false);
-            panel4.PerformLayout();
-            pnlListNames.ResumeLayout(false);
+            tabControl1.ResumeLayout(false);
+            tabPage1.ResumeLayout(false);
+            tabPage1.PerformLayout();
             ResumeLayout(false);
         }
 
         #endregion
 
-        private Panel pnlInterest;
-        private TextBox textPresentValue;
-        private Button compoundInterest;
-        private Button simpleInterest;
-        private TextBox textInterestRate;
-        private TextBox textTime;
-        private Label label1;
+        private ContextMenuStrip contextMenuStrip1;
+        private TabControl tabControl1;
+        private TabPage tabPage1;
+        private TabPage tabPage2;
+        private TabPage tabPage3;
+        private TabPage tabPage4;
+        private TabPage tabPage5;
+        private TabPage tabPage6;
+        private Label label4;
         private Label label3;
         private Label label2;
-        private Panel pnlInsideForm;
-        private TextBox txtAddress;
-        private TextBox txtName;
-        private TextBox txtID;
-        private Label label6;
-        private Label label5;
-        private Label label4;
+        private Label label1;
         private Button btncreate;
-        private Panel pnlSearch;
-        private Panel panel4;
-        private RadioButton rbtList;
-        private RadioButton rbtSearch;
-        private RadioButton rbtAdd;
-        private Button btnConfirm;
-        private Panel pnlListNames;
-        private Label label7;
+        private TextBox txtAddress;
+        private TextBox txtID;
         private TextBox txtCustomerID;
-        private ListBox lsbNames;
+        private TextBox txtName;
+        private TabPage tabPage7;
     }
 }

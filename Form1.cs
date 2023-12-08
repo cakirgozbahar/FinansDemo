@@ -14,77 +14,59 @@ namespace FinansDemo
         }
 
 
-        private void btnConfirm_Click(object sender, EventArgs e)
-        {
-            if (rbtAdd.Checked)
-            {
-                pnlInsideForm.Visible = true;
-                
-            }
-            else if (rbtSearch.Checked)
-                pnlSearch.Visible = true;
-            else if (rbtList.Checked)
-            {
-                pnlListNames.Visible = true;
+        //private void btnConfirm_Click(object sender, EventArgs e)
+        //{
+        //    if (rbtAdd.Checked)
+        //    {
+        //        pnlInsideForm.Visible = true;
 
-                List<string> names = bnk.listCustomer();
+        //    }
+        //    else if (rbtSearch.Checked)
+        //        pnlSearch.Visible = true;
+        //    else if (rbtList.Checked)
+        //    {
+        //        pnlListNames.Visible = true;
 
-                foreach (string name in names)
-                    lsbNames.Items.Add(name);
-            }
-        }
+        //        List<string> names = bnk.listCustomer();
 
-        private void btncreate_Click(object sender, EventArgs e)
-        {
-            Address address = new Address(txtAddress.Text);
-            ID id = new ID(txtID.Text);
-           
+        //        foreach (string name in names)
+        //            lsbNames.Items.Add(name);
+        //    }
+        //}
 
+      
 
+        //  public void compoundInterest_Click(object sender, EventArgs e)
+        /*  {Interest interest = new Interest(0, 0, 0);
+              interest.present_value = Convert.ToDouble(textPresentValue.Text);
+              interest.i = Convert.ToDouble(textInterestRate.Text);
+              interest.time = Convert.ToDouble(textTime.Text);
 
-            MessageBox.Show("Customer. " + txtName.Text + " has been inserted!");
-            pnlInsideForm.Visible = false;
-            pnlInterest.Visible = true;
-            
-           
+              double p = interest.present_value;
+              double i = interest.i;
+              double t = interest.time;
 
-            Customer cs = new Customer(txtName.Text, txtCustomerID.Text, id, address );
+              double a = interest.CompoundInterest(t, i, p);
+              return a;
 
-            bnk.insertCustomer(cs);
+              MessageBox.Show("Accumulated value is ");
+          }
+        */
+        //public void simpleInterest_Click(object sender, EventArgs e)
+        //{
+        //    Interest interest = new Interest(0, 0, 0);
+        //    interest.present_value = Convert.ToDouble(textPresentValue.Text);
+        //    interest.i = Convert.ToDouble(textInterestRate.Text);
+        //    interest.time = Convert.ToDouble(textTime.Text);
 
-        }
+        //    double p = interest.present_value;
+        //    double i = interest.i;
+        //    double t = interest.time;
 
-        public void compoundInterest_Click(object sender, EventArgs e)
-        {/*Interest interest = new Interest(0, 0, 0);
-            interest.present_value = Convert.ToDouble(textPresentValue.Text);
-            interest.i = Convert.ToDouble(textInterestRate.Text);
-            interest.time = Convert.ToDouble(textTime.Text);
+        //    double a = interest.SimpleInterest(t, i, p);
 
-            double p = interest.present_value;
-            double i = interest.i;
-            double t = interest.time;
-
-            double a = interest.CompoundInterest(t, i, p);
-            return a;
-            */
-          MessageBox.Show("Accumulated value is " );
-        }
-
-        public void simpleInterest_Click(object sender, EventArgs e)
-        {
-            Interest interest = new Interest(0, 0, 0);
-            interest.present_value = Convert.ToDouble(textPresentValue.Text);
-            interest.i = Convert.ToDouble(textInterestRate.Text);
-            interest.time = Convert.ToDouble(textTime.Text);
-
-            double p = interest.present_value;
-            double i = interest.i;
-            double t = interest.time;
-
-            double a = interest.SimpleInterest(t, i, p);
-
-            MessageBox.Show("Accumulated value is " + a);
-        }
+        //    MessageBox.Show("Accumulated value is " + a);
+        //}
 
         private void radioButton1_CheckedChanged(object sender, EventArgs e)
         {
@@ -96,10 +78,22 @@ namespace FinansDemo
 
         }
 
-        
 
-        private void dateTimePicker1_ValueChanged(object sender, EventArgs e)
+
+        private void textBox1_TextChanged(object sender, EventArgs e)
         {
+
+        }
+
+        private void btncreate_Click_1(object sender, EventArgs e)
+        {
+            Address address = new Address(txtAddress.Text);
+            ID id = new ID(txtID.Text);
+
+            Customer cs = new Customer(txtName.Text, txtCustomerID.Text, id, address);
+
+            MessageBox.Show("Customer " + txtCustomerID.Text + " has been inserted.");
+            bnk.insertCustomer(cs);
 
         }
     }
