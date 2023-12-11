@@ -13,22 +13,7 @@ namespace FinansDemo
             bnk = new Bank();
             InitializeComponent();
         }
-        private void radioButton1_CheckedChanged(object sender, EventArgs e)
-        {
 
-        }
-
-        private void label6_Click(object sender, EventArgs e)
-        {
-
-        }
-
-
-
-        private void textBox1_TextChanged(object sender, EventArgs e)
-        {
-
-        }
 
 
         private void btncreate_Click_1(object sender, EventArgs e)
@@ -74,16 +59,15 @@ namespace FinansDemo
 
         private void btnAddLoanToCustomer_Click(object sender, EventArgs e)
         {
-            Interest interest = new Interest(0, 0, 0);
-            Loan loan = new Loan(Convert.ToDouble(txtTime.Text), Convert.ToDouble(txtInterestRate), Convert.ToDouble(txtPresentValue.Text));
+
+            Loan loan = new Loan(Convert.ToDouble(txtTime.Text), Convert.ToDouble(txtInterestRate.Text), Convert.ToDouble(txtPresentValue.Text));
             bnk.addLoanToCustomer(loan, Convert.ToInt32(cbxAddLoanToCustomer.SelectedIndex.ToString()));
+            MessageBox.Show("Loan added to customer " + txtCustomerID.Text + " .", "Adding Loan", MessageBoxButtons.OK, MessageBoxIcon.Information);
+            txtTime.Text = " ";
+            txtInterestRate.Text = " ";
+            txtPresentValue.Text = " ";
         }
 
-
-        private void label5_Click(object sender, EventArgs e)
-        {
-
-        }
 
         private void tabControl1_SelectedIndexChanged(object sender, EventArgs e)
         {
@@ -123,14 +107,56 @@ namespace FinansDemo
                     cbxAddLoanToCustomer.SelectedIndex = 0;
                 }
             }
+            else if (tabControl1.SelectedIndex == 4)
+            {
+                cbxDltLoanToCs.Items.Clear();
+                cbxDltCsLoans.Items.Clear();
+                foreach (Customer cs in bnk.customers)
+                {
+                    cbxDltLoanToCs.Items.Add(cs.getCustomerId());
+                    cbxDltCsLoans.Items.Add(cs.LoanList);
+                }
+
+                if (cbxDltLoanToCs.Items.Count != 0 && cbxDltCsLoans.Items.Count !=0)
+                {
+                    cbxDltLoanToCs.SelectedIndex = 0;
+                    cbxDltCsLoans.SelectedIndex = 0;
+                }
+
+            }
             else if (tabControl1.SelectedIndex == 5)
             {
                 lsbLoansOfCustomers.Items.Clear();
 
                 foreach (Customer cs in bnk.customers)
                 {
-                    lsbLoansOfCustomers.Items.Add(cs.getCustomerId() + " " + cs.name + " " + cs.LoanList);
+                    lsbLoansOfCustomers.Items.Add(cs.getCustomerId() + " " + cs.name + " " + cs.LoanList.AsReadOnly());
                 }
+            }
+            else if (tabControl1.SelectedIndex == 6)
+            {
+                cbxUpdateCustomer.Items.Clear();
+                foreach (Customer cs in bnk.customers)
+                {
+                    cbxUpdateCustomer.Items.Add(cs.getCustomerId());
+                }
+
+                if (cbxUpdateCustomer.Items.Count != 0)
+                {
+                    cbxUpdateCustomer.SelectedIndex = 0;
+                }
+
+                cbxAddress.Items.Clear();
+                foreach (Customer cs in bnk.customers)
+                {
+                    cbxAddress.Items.Add(cs.Address.getText());
+                }
+
+                if (cbxAddress.Items.Count != 0)
+                {
+                    cbxAddress.SelectedIndex = 0;
+                }
+
             }
 
         }
@@ -150,23 +176,18 @@ namespace FinansDemo
 
 
 
-        private void label6_Click_1(object sender, EventArgs e)
-        {
 
-        }
 
-        private void label10_Click(object sender, EventArgs e)
-        {
 
-        }
 
-        private void comboBox2_SelectedIndexChanged(object sender, EventArgs e)
-        {
-        }
 
-        private void button3_Click(object sender, EventArgs e)
-        {
-        }
+
+
+
+
+
+
+
 
 
     }

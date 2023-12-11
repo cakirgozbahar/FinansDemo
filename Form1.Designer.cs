@@ -60,21 +60,21 @@
             label6 = new Label();
             cbxAddLoanToCustomer = new ComboBox();
             tabPage5 = new TabPage();
+            label11 = new Label();
+            cbxDltCsLoans = new ComboBox();
             button3 = new Button();
-            comboBox2 = new ComboBox();
+            cbxDltLoanToCs = new ComboBox();
             label10 = new Label();
             tabPage6 = new TabPage();
             lsbLoansOfCustomers = new ListBox();
             tabPage7 = new TabPage();
-            comboBox1 = new ComboBox();
-            label11 = new Label();
-            comboBox3 = new ComboBox();
-            label12 = new Label();
-            label13 = new Label();
+            btnUpdateCustomer = new Button();
+            txtUpdateAddress = new TextBox();
+            cbxAddress = new ComboBox();
             label14 = new Label();
-            comboBox4 = new ComboBox();
-            textBox1 = new TextBox();
-            button1 = new Button();
+            label13 = new Label();
+            label12 = new Label();
+            cbxUpdateCustomer = new ComboBox();
             tabControl1.SuspendLayout();
             tabPage1.SuspendLayout();
             tabPage2.SuspendLayout();
@@ -162,7 +162,6 @@
             txtName.Name = "txtName";
             txtName.Size = new Size(100, 23);
             txtName.TabIndex = 4;
-            txtName.TextChanged += textBox1_TextChanged;
             // 
             // label4
             // 
@@ -239,7 +238,6 @@
             label5.Size = new Size(73, 15);
             label5.TabIndex = 0;
             label5.Text = "Customer ID";
-            label5.Click += label5_Click;
             // 
             // tabPage3
             // 
@@ -371,7 +369,6 @@
             label6.Size = new Size(79, 15);
             label6.TabIndex = 1;
             label6.Text = "Customer ID :";
-            label6.Click += label6_Click_1;
             // 
             // cbxAddLoanToCustomer
             // 
@@ -384,9 +381,9 @@
             // tabPage5
             // 
             tabPage5.Controls.Add(label11);
-            tabPage5.Controls.Add(comboBox1);
+            tabPage5.Controls.Add(cbxDltCsLoans);
             tabPage5.Controls.Add(button3);
-            tabPage5.Controls.Add(comboBox2);
+            tabPage5.Controls.Add(cbxDltLoanToCs);
             tabPage5.Controls.Add(label10);
             tabPage5.Location = new Point(4, 24);
             tabPage5.Name = "tabPage5";
@@ -396,6 +393,23 @@
             tabPage5.Text = "Delete Loan to Customer";
             tabPage5.UseVisualStyleBackColor = true;
             // 
+            // label11
+            // 
+            label11.AutoSize = true;
+            label11.Location = new Point(84, 134);
+            label11.Name = "label11";
+            label11.Size = new Size(93, 15);
+            label11.TabIndex = 7;
+            label11.Text = "Customer Loans";
+            // 
+            // cbxDltCsLoans
+            // 
+            cbxDltCsLoans.FormattingEnabled = true;
+            cbxDltCsLoans.Location = new Point(212, 131);
+            cbxDltCsLoans.Name = "cbxDltCsLoans";
+            cbxDltCsLoans.Size = new Size(121, 23);
+            cbxDltCsLoans.TabIndex = 6;
+            // 
             // button3
             // 
             button3.Location = new Point(459, 83);
@@ -404,16 +418,14 @@
             button3.TabIndex = 5;
             button3.Text = "Delete Loan from Customer";
             button3.UseVisualStyleBackColor = true;
-            button3.Click += button3_Click;
             // 
-            // comboBox2
+            // cbxDltLoanToCs
             // 
-            comboBox2.FormattingEnabled = true;
-            comboBox2.Location = new Point(212, 35);
-            comboBox2.Name = "comboBox2";
-            comboBox2.Size = new Size(121, 23);
-            comboBox2.TabIndex = 4;
-            comboBox2.SelectedIndexChanged += comboBox2_SelectedIndexChanged;
+            cbxDltLoanToCs.FormattingEnabled = true;
+            cbxDltLoanToCs.Location = new Point(212, 35);
+            cbxDltLoanToCs.Name = "cbxDltLoanToCs";
+            cbxDltLoanToCs.Size = new Size(121, 23);
+            cbxDltLoanToCs.TabIndex = 4;
             // 
             // label10
             // 
@@ -423,7 +435,6 @@
             label10.Size = new Size(73, 15);
             label10.TabIndex = 3;
             label10.Text = "Customer ID";
-            label10.Click += label10_Click;
             // 
             // tabPage6
             // 
@@ -448,13 +459,13 @@
             // 
             // tabPage7
             // 
-            tabPage7.Controls.Add(button1);
-            tabPage7.Controls.Add(textBox1);
-            tabPage7.Controls.Add(comboBox4);
+            tabPage7.Controls.Add(btnUpdateCustomer);
+            tabPage7.Controls.Add(txtUpdateAddress);
+            tabPage7.Controls.Add(cbxAddress);
             tabPage7.Controls.Add(label14);
             tabPage7.Controls.Add(label13);
             tabPage7.Controls.Add(label12);
-            tabPage7.Controls.Add(comboBox3);
+            tabPage7.Controls.Add(cbxUpdateCustomer);
             tabPage7.Location = new Point(4, 24);
             tabPage7.Name = "tabPage7";
             tabPage7.Padding = new Padding(3);
@@ -463,48 +474,29 @@
             tabPage7.Text = "Update Customer";
             tabPage7.UseVisualStyleBackColor = true;
             // 
-            // comboBox1
+            // btnUpdateCustomer
             // 
-            comboBox1.FormattingEnabled = true;
-            comboBox1.Location = new Point(212, 131);
-            comboBox1.Name = "comboBox1";
-            comboBox1.Size = new Size(121, 23);
-            comboBox1.TabIndex = 6;
+            btnUpdateCustomer.Location = new Point(398, 168);
+            btnUpdateCustomer.Name = "btnUpdateCustomer";
+            btnUpdateCustomer.Size = new Size(75, 23);
+            btnUpdateCustomer.TabIndex = 6;
+            btnUpdateCustomer.Text = "Update";
+            btnUpdateCustomer.UseVisualStyleBackColor = true;
             // 
-            // label11
+            // txtUpdateAddress
             // 
-            label11.AutoSize = true;
-            label11.Location = new Point(84, 134);
-            label11.Name = "label11";
-            label11.Size = new Size(93, 15);
-            label11.TabIndex = 7;
-            label11.Text = "Customer Loans";
+            txtUpdateAddress.Location = new Point(535, 91);
+            txtUpdateAddress.Name = "txtUpdateAddress";
+            txtUpdateAddress.Size = new Size(121, 23);
+            txtUpdateAddress.TabIndex = 5;
             // 
-            // comboBox3
+            // cbxAddress
             // 
-            comboBox3.FormattingEnabled = true;
-            comboBox3.Location = new Point(158, 39);
-            comboBox3.Name = "comboBox3";
-            comboBox3.Size = new Size(121, 23);
-            comboBox3.TabIndex = 0;
-            // 
-            // label12
-            // 
-            label12.AutoSize = true;
-            label12.Location = new Point(41, 42);
-            label12.Name = "label12";
-            label12.Size = new Size(73, 15);
-            label12.TabIndex = 1;
-            label12.Text = "Customer ID";
-            // 
-            // label13
-            // 
-            label13.AutoSize = true;
-            label13.Location = new Point(398, 43);
-            label13.Name = "label13";
-            label13.Size = new Size(71, 15);
-            label13.TabIndex = 2;
-            label13.Text = "Old Address";
+            cbxAddress.FormattingEnabled = true;
+            cbxAddress.Location = new Point(535, 42);
+            cbxAddress.Name = "cbxAddress";
+            cbxAddress.Size = new Size(121, 23);
+            cbxAddress.TabIndex = 4;
             // 
             // label14
             // 
@@ -515,29 +507,31 @@
             label14.TabIndex = 3;
             label14.Text = "New Address";
             // 
-            // comboBox4
+            // label13
             // 
-            comboBox4.FormattingEnabled = true;
-            comboBox4.Location = new Point(535, 42);
-            comboBox4.Name = "comboBox4";
-            comboBox4.Size = new Size(121, 23);
-            comboBox4.TabIndex = 4;
+            label13.AutoSize = true;
+            label13.Location = new Point(398, 43);
+            label13.Name = "label13";
+            label13.Size = new Size(71, 15);
+            label13.TabIndex = 2;
+            label13.Text = "Old Address";
             // 
-            // textBox1
+            // label12
             // 
-            textBox1.Location = new Point(535, 91);
-            textBox1.Name = "textBox1";
-            textBox1.Size = new Size(121, 23);
-            textBox1.TabIndex = 5;
+            label12.AutoSize = true;
+            label12.Location = new Point(41, 42);
+            label12.Name = "label12";
+            label12.Size = new Size(73, 15);
+            label12.TabIndex = 1;
+            label12.Text = "Customer ID";
             // 
-            // button1
+            // cbxUpdateCustomer
             // 
-            button1.Location = new Point(398, 168);
-            button1.Name = "button1";
-            button1.Size = new Size(75, 23);
-            button1.TabIndex = 6;
-            button1.Text = "Update";
-            button1.UseVisualStyleBackColor = true;
+            cbxUpdateCustomer.FormattingEnabled = true;
+            cbxUpdateCustomer.Location = new Point(158, 39);
+            cbxUpdateCustomer.Name = "cbxUpdateCustomer";
+            cbxUpdateCustomer.Size = new Size(121, 23);
+            cbxUpdateCustomer.TabIndex = 0;
             // 
             // Form1
             // 
@@ -598,18 +592,18 @@
         private Button btnAddLoanToCustomer;
         private RadioButton radioButton2;
         private Button button3;
-        private ComboBox comboBox2;
+        private ComboBox cbxDltLoanToCs;
         private Label label10;
         private ListBox lsbCustomers;
         private ListBox lsbLoansOfCustomers;
         private Label label11;
-        private ComboBox comboBox1;
-        private Button button1;
-        private TextBox textBox1;
-        private ComboBox comboBox4;
+        private ComboBox cbxDltCsLoans;
+        private Button btnUpdateCustomer;
+        private TextBox txtUpdateAddress;
+        private ComboBox cbxAddress;
         private Label label14;
         private Label label13;
         private Label label12;
-        private ComboBox comboBox3;
+        private ComboBox cbxUpdateCustomer;
     }
 }

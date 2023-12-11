@@ -11,7 +11,8 @@ namespace FinansDemo
         public double time;
         public double i;
         public double present_value;
-
+        public double accumulated_value;
+       
         public Interest(double time,double i, double present_value)
         {
             this.time = time;
@@ -23,7 +24,7 @@ namespace FinansDemo
         {   this.time = time; 
             this.i = i; 
             this.present_value = present_value;
-            double accumulated_value;
+            
 
             accumulated_value = this.present_value * (1 + this.i * this.time);
 
@@ -35,8 +36,7 @@ namespace FinansDemo
             this.time = time;
             this.i = i;
             this.present_value = present_value;
-            double accumulated_value;
-            //double y = Math.Pow(1 + this.i, this.time);
+            
             accumulated_value = this.present_value * Math.Pow(1 + this.i, this.time);
 
             return accumulated_value;
