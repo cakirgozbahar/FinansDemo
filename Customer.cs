@@ -8,11 +8,11 @@ namespace FinansDemo
 {
     internal class Customer
     {
-        public string name;
+        public string name { get; set; }
         private string customerId;
-        public ID ıd;
+        public ID ıd {  get; set; }
         public Address Address;
-        //public Interest Interest;
+        public List<Loan> LoanList;
         public Customer(string name,string _customerId,ID ıd,Address Address)
 
         {
@@ -20,7 +20,7 @@ namespace FinansDemo
             this.customerId = _customerId;
             this.ıd = ıd;
             this.Address = Address;
-            //this.Interest = interest;
+            this.LoanList = new  List<Loan>();
         }
         public string getCustomerId()
         {
@@ -30,12 +30,17 @@ namespace FinansDemo
         {
             this.customerId = customerId;
         }
-        
-        
-            
-        
+        public void addLoan(Loan loan)
+        {
+            this.LoanList.Add(loan);
+        }
+       
+      
+
+
+
 
     }
-    
-    
+
+
 }

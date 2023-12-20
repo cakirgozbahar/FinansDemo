@@ -42,13 +42,47 @@
             label2 = new Label();
             label1 = new Label();
             tabPage2 = new TabPage();
+            btnDeleteCustomer = new Button();
+            cbxDeleteCustomer = new ComboBox();
+            label5 = new Label();
             tabPage3 = new TabPage();
+            lsbCustomers = new ListBox();
             tabPage4 = new TabPage();
+            btnAddLoanToCustomer = new Button();
+            radioButton2 = new RadioButton();
+            radioButton1 = new RadioButton();
+            txtInterestRate = new TextBox();
+            txtTime = new TextBox();
+            txtPresentValue = new TextBox();
+            label9 = new Label();
+            label8 = new Label();
+            label7 = new Label();
+            label6 = new Label();
+            cbxAddLoanToCustomer = new ComboBox();
             tabPage5 = new TabPage();
+            label11 = new Label();
+            cbxDltCsLoans = new ComboBox();
+            button3 = new Button();
+            cbxDltLoanToCs = new ComboBox();
+            label10 = new Label();
             tabPage6 = new TabPage();
+            lsbLoansOfCustomers = new ListBox();
             tabPage7 = new TabPage();
+            btnUpdateCustomer = new Button();
+            txtUpdateAddress = new TextBox();
+            cbxAddress = new ComboBox();
+            label14 = new Label();
+            label13 = new Label();
+            label12 = new Label();
+            cbxUpdateCustomer = new ComboBox();
             tabControl1.SuspendLayout();
             tabPage1.SuspendLayout();
+            tabPage2.SuspendLayout();
+            tabPage3.SuspendLayout();
+            tabPage4.SuspendLayout();
+            tabPage5.SuspendLayout();
+            tabPage6.SuspendLayout();
+            tabPage7.SuspendLayout();
             SuspendLayout();
             // 
             // contextMenuStrip1
@@ -70,6 +104,7 @@
             tabControl1.SelectedIndex = 0;
             tabControl1.Size = new Size(815, 413);
             tabControl1.TabIndex = 1;
+            tabControl1.SelectedIndexChanged += tabControl1_SelectedIndexChanged;
             // 
             // tabPage1
             // 
@@ -127,7 +162,6 @@
             txtName.Name = "txtName";
             txtName.Size = new Size(100, 23);
             txtName.TabIndex = 4;
-            txtName.TextChanged += textBox1_TextChanged;
             // 
             // label4
             // 
@@ -167,6 +201,9 @@
             // 
             // tabPage2
             // 
+            tabPage2.Controls.Add(btnDeleteCustomer);
+            tabPage2.Controls.Add(cbxDeleteCustomer);
+            tabPage2.Controls.Add(label5);
             tabPage2.Location = new Point(4, 24);
             tabPage2.Name = "tabPage2";
             tabPage2.Padding = new Padding(3);
@@ -175,18 +212,67 @@
             tabPage2.Text = "Delete Customer";
             tabPage2.UseVisualStyleBackColor = true;
             // 
+            // btnDeleteCustomer
+            // 
+            btnDeleteCustomer.Location = new Point(377, 35);
+            btnDeleteCustomer.Name = "btnDeleteCustomer";
+            btnDeleteCustomer.Size = new Size(121, 23);
+            btnDeleteCustomer.TabIndex = 2;
+            btnDeleteCustomer.Text = "Delete Customer";
+            btnDeleteCustomer.UseVisualStyleBackColor = true;
+            btnDeleteCustomer.Click += btnDeleteCustomer_Click;
+            // 
+            // cbxDeleteCustomer
+            // 
+            cbxDeleteCustomer.FormattingEnabled = true;
+            cbxDeleteCustomer.Location = new Point(174, 32);
+            cbxDeleteCustomer.Name = "cbxDeleteCustomer";
+            cbxDeleteCustomer.Size = new Size(121, 23);
+            cbxDeleteCustomer.TabIndex = 1;
+            // 
+            // label5
+            // 
+            label5.AutoSize = true;
+            label5.Location = new Point(91, 35);
+            label5.Name = "label5";
+            label5.Size = new Size(73, 15);
+            label5.TabIndex = 0;
+            label5.Text = "Customer ID";
+            // 
             // tabPage3
             // 
+            tabPage3.Controls.Add(lsbCustomers);
             tabPage3.Location = new Point(4, 24);
             tabPage3.Name = "tabPage3";
             tabPage3.Padding = new Padding(3);
             tabPage3.Size = new Size(807, 385);
             tabPage3.TabIndex = 2;
-            tabPage3.Text = "Search Customer";
+            tabPage3.Text = "List Customer";
             tabPage3.UseVisualStyleBackColor = true;
+            // 
+            // lsbCustomers
+            // 
+            lsbCustomers.FormattingEnabled = true;
+            lsbCustomers.ItemHeight = 15;
+            lsbCustomers.Location = new Point(27, 16);
+            lsbCustomers.Name = "lsbCustomers";
+            lsbCustomers.ScrollAlwaysVisible = true;
+            lsbCustomers.Size = new Size(602, 259);
+            lsbCustomers.TabIndex = 0;
             // 
             // tabPage4
             // 
+            tabPage4.Controls.Add(btnAddLoanToCustomer);
+            tabPage4.Controls.Add(radioButton2);
+            tabPage4.Controls.Add(radioButton1);
+            tabPage4.Controls.Add(txtInterestRate);
+            tabPage4.Controls.Add(txtTime);
+            tabPage4.Controls.Add(txtPresentValue);
+            tabPage4.Controls.Add(label9);
+            tabPage4.Controls.Add(label8);
+            tabPage4.Controls.Add(label7);
+            tabPage4.Controls.Add(label6);
+            tabPage4.Controls.Add(cbxAddLoanToCustomer);
             tabPage4.Location = new Point(4, 24);
             tabPage4.Name = "tabPage4";
             tabPage4.Padding = new Padding(3);
@@ -195,8 +281,111 @@
             tabPage4.Text = "Add Loan to Customer";
             tabPage4.UseVisualStyleBackColor = true;
             // 
+            // btnAddLoanToCustomer
+            // 
+            btnAddLoanToCustomer.Location = new Point(349, 244);
+            btnAddLoanToCustomer.Name = "btnAddLoanToCustomer";
+            btnAddLoanToCustomer.Size = new Size(160, 23);
+            btnAddLoanToCustomer.TabIndex = 10;
+            btnAddLoanToCustomer.Text = "Add loan to customer";
+            btnAddLoanToCustomer.UseVisualStyleBackColor = true;
+            btnAddLoanToCustomer.Click += btnAddLoanToCustomer_Click;
+            // 
+            // radioButton2
+            // 
+            radioButton2.AutoSize = true;
+            radioButton2.Location = new Point(349, 194);
+            radioButton2.Name = "radioButton2";
+            radioButton2.Size = new Size(247, 19);
+            radioButton2.TabIndex = 9;
+            radioButton2.TabStop = true;
+            radioButton2.Text = "Calculate according to campound interest";
+            radioButton2.UseVisualStyleBackColor = true;
+            // 
+            // radioButton1
+            // 
+            radioButton1.AutoSize = true;
+            radioButton1.Location = new Point(349, 160);
+            radioButton1.Name = "radioButton1";
+            radioButton1.Size = new Size(224, 19);
+            radioButton1.TabIndex = 8;
+            radioButton1.TabStop = true;
+            radioButton1.Text = "Calculate according to simple interest";
+            radioButton1.UseVisualStyleBackColor = true;
+            radioButton1.CheckedChanged += radioButton1_CheckedChanged;
+            // 
+            // txtInterestRate
+            // 
+            txtInterestRate.Location = new Point(482, 108);
+            txtInterestRate.Name = "txtInterestRate";
+            txtInterestRate.Size = new Size(100, 23);
+            txtInterestRate.TabIndex = 7;
+            // 
+            // txtTime
+            // 
+            txtTime.Location = new Point(482, 65);
+            txtTime.Name = "txtTime";
+            txtTime.Size = new Size(100, 23);
+            txtTime.TabIndex = 6;
+            // 
+            // txtPresentValue
+            // 
+            txtPresentValue.Location = new Point(482, 27);
+            txtPresentValue.Name = "txtPresentValue";
+            txtPresentValue.Size = new Size(100, 23);
+            txtPresentValue.TabIndex = 5;
+            // 
+            // label9
+            // 
+            label9.AutoSize = true;
+            label9.Location = new Point(349, 108);
+            label9.Name = "label9";
+            label9.Size = new Size(69, 15);
+            label9.TabIndex = 4;
+            label9.Text = "Interest rate";
+            // 
+            // label8
+            // 
+            label8.AutoSize = true;
+            label8.Location = new Point(349, 73);
+            label8.Name = "label8";
+            label8.Size = new Size(33, 15);
+            label8.TabIndex = 3;
+            label8.Text = "Time";
+            // 
+            // label7
+            // 
+            label7.AutoSize = true;
+            label7.Location = new Point(349, 33);
+            label7.Name = "label7";
+            label7.Size = new Size(77, 15);
+            label7.TabIndex = 2;
+            label7.Text = "Present Value";
+            // 
+            // label6
+            // 
+            label6.AutoSize = true;
+            label6.Location = new Point(17, 30);
+            label6.Name = "label6";
+            label6.Size = new Size(79, 15);
+            label6.TabIndex = 1;
+            label6.Text = "Customer ID :";
+            // 
+            // cbxAddLoanToCustomer
+            // 
+            cbxAddLoanToCustomer.FormattingEnabled = true;
+            cbxAddLoanToCustomer.Location = new Point(118, 27);
+            cbxAddLoanToCustomer.Name = "cbxAddLoanToCustomer";
+            cbxAddLoanToCustomer.Size = new Size(121, 23);
+            cbxAddLoanToCustomer.TabIndex = 0;
+            // 
             // tabPage5
             // 
+            tabPage5.Controls.Add(label11);
+            tabPage5.Controls.Add(cbxDltCsLoans);
+            tabPage5.Controls.Add(button3);
+            tabPage5.Controls.Add(cbxDltLoanToCs);
+            tabPage5.Controls.Add(label10);
             tabPage5.Location = new Point(4, 24);
             tabPage5.Name = "tabPage5";
             tabPage5.Padding = new Padding(3);
@@ -205,8 +394,52 @@
             tabPage5.Text = "Delete Loan to Customer";
             tabPage5.UseVisualStyleBackColor = true;
             // 
+            // label11
+            // 
+            label11.AutoSize = true;
+            label11.Location = new Point(84, 134);
+            label11.Name = "label11";
+            label11.Size = new Size(93, 15);
+            label11.TabIndex = 7;
+            label11.Text = "Customer Loans";
+            // 
+            // cbxDltCsLoans
+            // 
+            cbxDltCsLoans.FormattingEnabled = true;
+            cbxDltCsLoans.Location = new Point(212, 131);
+            cbxDltCsLoans.Name = "cbxDltCsLoans";
+            cbxDltCsLoans.Size = new Size(121, 23);
+            cbxDltCsLoans.TabIndex = 6;
+            // 
+            // button3
+            // 
+            button3.Location = new Point(459, 83);
+            button3.Name = "button3";
+            button3.Size = new Size(189, 23);
+            button3.TabIndex = 5;
+            button3.Text = "Delete Loan from Customer";
+            button3.UseVisualStyleBackColor = true;
+            // 
+            // cbxDltLoanToCs
+            // 
+            cbxDltLoanToCs.FormattingEnabled = true;
+            cbxDltLoanToCs.Location = new Point(212, 35);
+            cbxDltLoanToCs.Name = "cbxDltLoanToCs";
+            cbxDltLoanToCs.Size = new Size(121, 23);
+            cbxDltLoanToCs.TabIndex = 4;
+            // 
+            // label10
+            // 
+            label10.AutoSize = true;
+            label10.Location = new Point(84, 42);
+            label10.Name = "label10";
+            label10.Size = new Size(73, 15);
+            label10.TabIndex = 3;
+            label10.Text = "Customer ID";
+            // 
             // tabPage6
             // 
+            tabPage6.Controls.Add(lsbLoansOfCustomers);
             tabPage6.Location = new Point(4, 24);
             tabPage6.Name = "tabPage6";
             tabPage6.Padding = new Padding(3);
@@ -215,8 +448,25 @@
             tabPage6.Text = "List Loans of Customers";
             tabPage6.UseVisualStyleBackColor = true;
             // 
+            // lsbLoansOfCustomers
+            // 
+            lsbLoansOfCustomers.FormattingEnabled = true;
+            lsbLoansOfCustomers.ItemHeight = 15;
+            lsbLoansOfCustomers.Location = new Point(38, 29);
+            lsbLoansOfCustomers.Name = "lsbLoansOfCustomers";
+            lsbLoansOfCustomers.ScrollAlwaysVisible = true;
+            lsbLoansOfCustomers.Size = new Size(466, 184);
+            lsbLoansOfCustomers.TabIndex = 0;
+            // 
             // tabPage7
             // 
+            tabPage7.Controls.Add(btnUpdateCustomer);
+            tabPage7.Controls.Add(txtUpdateAddress);
+            tabPage7.Controls.Add(cbxAddress);
+            tabPage7.Controls.Add(label14);
+            tabPage7.Controls.Add(label13);
+            tabPage7.Controls.Add(label12);
+            tabPage7.Controls.Add(cbxUpdateCustomer);
             tabPage7.Location = new Point(4, 24);
             tabPage7.Name = "tabPage7";
             tabPage7.Padding = new Padding(3);
@@ -225,6 +475,65 @@
             tabPage7.Text = "Update Customer";
             tabPage7.UseVisualStyleBackColor = true;
             // 
+            // btnUpdateCustomer
+            // 
+            btnUpdateCustomer.Location = new Point(398, 168);
+            btnUpdateCustomer.Name = "btnUpdateCustomer";
+            btnUpdateCustomer.Size = new Size(75, 23);
+            btnUpdateCustomer.TabIndex = 6;
+            btnUpdateCustomer.Text = "Update";
+            btnUpdateCustomer.UseVisualStyleBackColor = true;
+            // 
+            // txtUpdateAddress
+            // 
+            txtUpdateAddress.Location = new Point(535, 91);
+            txtUpdateAddress.Name = "txtUpdateAddress";
+            txtUpdateAddress.Size = new Size(121, 23);
+            txtUpdateAddress.TabIndex = 5;
+            // 
+            // cbxAddress
+            // 
+            cbxAddress.FormattingEnabled = true;
+            cbxAddress.Location = new Point(535, 42);
+            cbxAddress.Name = "cbxAddress";
+            cbxAddress.Size = new Size(121, 23);
+            cbxAddress.TabIndex = 4;
+            // 
+            // label14
+            // 
+            label14.AutoSize = true;
+            label14.Location = new Point(398, 91);
+            label14.Name = "label14";
+            label14.Size = new Size(76, 15);
+            label14.TabIndex = 3;
+            label14.Text = "New Address";
+            // 
+            // label13
+            // 
+            label13.AutoSize = true;
+            label13.Location = new Point(398, 43);
+            label13.Name = "label13";
+            label13.Size = new Size(71, 15);
+            label13.TabIndex = 2;
+            label13.Text = "Old Address";
+            // 
+            // label12
+            // 
+            label12.AutoSize = true;
+            label12.Location = new Point(41, 42);
+            label12.Name = "label12";
+            label12.Size = new Size(73, 15);
+            label12.TabIndex = 1;
+            label12.Text = "Customer ID";
+            // 
+            // cbxUpdateCustomer
+            // 
+            cbxUpdateCustomer.FormattingEnabled = true;
+            cbxUpdateCustomer.Location = new Point(158, 39);
+            cbxUpdateCustomer.Name = "cbxUpdateCustomer";
+            cbxUpdateCustomer.Size = new Size(121, 23);
+            cbxUpdateCustomer.TabIndex = 0;
+            // 
             // Form1
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
@@ -232,10 +541,20 @@
             ClientSize = new Size(949, 450);
             Controls.Add(tabControl1);
             Name = "Form1";
-            Text = "Form1";
+            Text = "Bank Form";
             tabControl1.ResumeLayout(false);
             tabPage1.ResumeLayout(false);
             tabPage1.PerformLayout();
+            tabPage2.ResumeLayout(false);
+            tabPage2.PerformLayout();
+            tabPage3.ResumeLayout(false);
+            tabPage4.ResumeLayout(false);
+            tabPage4.PerformLayout();
+            tabPage5.ResumeLayout(false);
+            tabPage5.PerformLayout();
+            tabPage6.ResumeLayout(false);
+            tabPage7.ResumeLayout(false);
+            tabPage7.PerformLayout();
             ResumeLayout(false);
         }
 
@@ -259,5 +578,33 @@
         private TextBox txtCustomerID;
         private TextBox txtName;
         private TabPage tabPage7;
+        private Button btnDeleteCustomer;
+        private ComboBox cbxDeleteCustomer;
+        private Label label5;
+        private Label label6;
+        private ComboBox cbxAddLoanToCustomer;
+        private RadioButton radioButton1;
+        private TextBox txtInterestRate;
+        private TextBox txtTime;
+        private TextBox txtPresentValue;
+        private Label label9;
+        private Label label8;
+        private Label label7;
+        private Button btnAddLoanToCustomer;
+        private RadioButton radioButton2;
+        private Button button3;
+        private ComboBox cbxDltLoanToCs;
+        private Label label10;
+        private ListBox lsbCustomers;
+        private ListBox lsbLoansOfCustomers;
+        private Label label11;
+        private ComboBox cbxDltCsLoans;
+        private Button btnUpdateCustomer;
+        private TextBox txtUpdateAddress;
+        private ComboBox cbxAddress;
+        private Label label14;
+        private Label label13;
+        private Label label12;
+        private ComboBox cbxUpdateCustomer;
     }
 }

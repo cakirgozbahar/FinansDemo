@@ -1,7 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
-using System.Numerics;
 using System.Text;
 using System.Threading.Tasks;
 
@@ -9,7 +8,7 @@ namespace FinansDemo
 {
     internal class Bank
     {
-        public List<Customer> customers;
+        public List<Customer> customers { get; set; }
 
         public Bank()
         {
@@ -18,22 +17,22 @@ namespace FinansDemo
 
         public void insertCustomer(Customer cs)
         {
-            customers.Add(cs);
+            this.customers.Add(cs);
         }
-        public string searchCustomer(string name)
+        public void deleteCustomer(int index)
         {
-            string address = "";
-
-            for (int i = 0; i < customers.Count; i++)
+            this.customers.RemoveAt(index);
+        }
+        public void addLoanToCustomer(Loan loan, int number)
+        {
+            foreach (Customer cs in this.customers)
             {
-                if (name == customers[i].name)
+                if (number == Convert.ToInt32(cs.getCustomerId()))
                 {
-                    address = customers[i].Address.getText();
+                    cs.addLoan(loan);
                     break;
                 }
             }
-
-            return address;
         }
 
         public List<string> listCustomer()
