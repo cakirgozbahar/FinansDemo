@@ -312,6 +312,7 @@
             radioButton1.TabStop = true;
             radioButton1.Text = "Calculate according to simple interest";
             radioButton1.UseVisualStyleBackColor = true;
+            radioButton1.CheckedChanged += radioButton1_CheckedChanged;
             // 
             // txtInterestRate
             // 
@@ -540,7 +541,7 @@
             ClientSize = new Size(949, 450);
             Controls.Add(tabControl1);
             Name = "Form1";
-            Text = "Form1";
+            Text = "Bank Form";
             tabControl1.ResumeLayout(false);
             tabPage1.ResumeLayout(false);
             tabPage1.PerformLayout();

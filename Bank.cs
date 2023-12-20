@@ -1,7 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
-using System.Numerics;
 using System.Text;
 using System.Threading.Tasks;
 
@@ -9,7 +8,7 @@ namespace FinansDemo
 {
     internal class Bank
     {
-        public List<Customer> customers {get; set;}
+        public List<Customer> customers { get; set; }
 
         public Bank()
         {
@@ -20,8 +19,8 @@ namespace FinansDemo
         {
             this.customers.Add(cs);
         }
-        public void deleteCustomer(int index) 
-        { 
+        public void deleteCustomer(int index)
+        {
             this.customers.RemoveAt(index);
         }
         public void addLoanToCustomer(Loan loan, int number)

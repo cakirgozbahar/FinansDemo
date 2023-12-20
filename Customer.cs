@@ -20,7 +20,7 @@ namespace FinansDemo
             this.customerId = _customerId;
             this.ıd = ıd;
             this.Address = Address;
-            this.LoanList = new List<Loan>();
+            this.LoanList = new  List<Loan>();
         }
         public string getCustomerId()
         {
@@ -34,7 +34,8 @@ namespace FinansDemo
         {
             this.LoanList.Add(loan);
         }
-
+       
+      
 
 
 

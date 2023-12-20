@@ -2,6 +2,15 @@ using static System.Runtime.InteropServices.JavaScript.JSType;
 using System.Numerics;
 using System.Net;
 using System;
+using System.Collections.Generic;
+using System.ComponentModel;
+using System.Data;
+using System.Drawing;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+using System.Windows.Forms;
+using System.CodeDom;
 
 namespace FinansDemo
 {
@@ -117,7 +126,7 @@ namespace FinansDemo
                     cbxDltCsLoans.Items.Add(cs.LoanList);
                 }
 
-                if (cbxDltLoanToCs.Items.Count != 0 && cbxDltCsLoans.Items.Count !=0)
+                if (cbxDltLoanToCs.Items.Count != 0 && cbxDltCsLoans.Items.Count != 0)
                 {
                     cbxDltLoanToCs.SelectedIndex = 0;
                     cbxDltCsLoans.SelectedIndex = 0;
@@ -128,9 +137,27 @@ namespace FinansDemo
             {
                 lsbLoansOfCustomers.Items.Clear();
 
+
+
+
                 foreach (Customer cs in bnk.customers)
                 {
-                    lsbLoansOfCustomers.Items.Add(cs.getCustomerId() + " " + cs.name + " " + cs.LoanList.AsReadOnly());
+                    lsbLoansOfCustomers.Items.Add($"{cs.getCustomerId()} - {cs.name}'s Loans:");
+
+                    foreach (Loan loan in cs.LoanList)
+                    {
+                        lsbLoansOfCustomers.Items.Add($"    {loan.accumulated_value}");
+                    }
+
+                    // lsbLoansOfCustomers.Items.Add(cs.getCustomerId() + " " + cs.name+ " " );  
+                    //cs.LoanList.ForEach(loan => lsbLoansOfCustomers.Items.Add($"    {loan}"));
+                    //foreach (Loan loan in cs.LoanList)
+                    //{
+                    //    lsbLoansOfCustomers.Items.Add($"    {loan}");
+                    //}
+
+
+
                 }
             }
             else if (tabControl1.SelectedIndex == 6)
@@ -146,49 +173,15 @@ namespace FinansDemo
                     cbxUpdateCustomer.SelectedIndex = 0;
                 }
 
-                cbxAddress.Items.Clear();
-                foreach (Customer cs in bnk.customers)
-                {
-                    cbxAddress.Items.Add(cs.Address.getText());
-                }
 
-                if (cbxAddress.Items.Count != 0)
-                {
-                    cbxAddress.SelectedIndex = 0;
-                }
 
             }
 
         }
 
+        private void radioButton1_CheckedChanged(object sender, EventArgs e)
+        {
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+        }
     }
 }
