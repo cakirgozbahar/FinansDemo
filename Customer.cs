@@ -9,15 +9,15 @@ namespace FinansDemo
     internal class Customer
     {
         public string name { get; set; }
-        private string customerId;
+        private string customerId { get; set; }
         public ID ıd {  get; set; }
         public Address Address;
         public List<Loan> LoanList;
-        public Customer(string name,string _customerId,ID ıd,Address Address)
+        public Customer(string name,string customerId,ID ıd,Address Address)
 
         {
             this.name = name;
-            this.customerId = _customerId;
+            this.customerId = customerId;
             this.ıd = ıd;
             this.Address = Address;
             this.LoanList = new  List<Loan>();
