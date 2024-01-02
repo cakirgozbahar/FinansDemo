@@ -38,14 +38,39 @@ namespace FinansDemo
             return dataSet;
         }
 
-        public void insertCustomer(Customer cs)
+        public bool addCustomer(Customer cs,ID id, Address ads)
         {
-            this.customers.Add(cs);
+
+            DataSet ds = makeDBOperations("insert into CustomerTable(CustomerId, Name, ID_number, Address) values('" + cs.getCustomerId() + "', '" + cs.name + "','" + id.getID() + "', '" + ads.getText()  + "')");
+
+            if (ds != null)
+            {
+                return true;
+            }
+            else
+            {
+                return false;
+            }
+
         }
-        public void deleteCustomer(int index)
+        public bool deleteCustomer(string idnumber)
         {
-            this.customers.RemoveAt(index);
+            DataSet ds = makeDBOperations("delete from CustomerTable where CustomerId = '" + idnumber + "'");
+
+            if (ds != null)
+            {
+                return true;
+            }
+            else
+            {
+                return false;
+            }
         }
+        public DataSet getAllCustomers()
+        {
+            return makeDBOperations("select * from CustomerTable");
+        }
+
         public void addLoanToCustomer(Loan loan, int number)
         {
             foreach (Customer cs in this.customers)

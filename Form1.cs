@@ -34,9 +34,10 @@ namespace FinansDemo
             ID id = new ID(txtID.Text);
 
             Customer cs = new Customer(txtName.Text, txtCustomerID.Text, id, address);
+            bool result = bnk.addCustomer(cs, id, address);
 
             MessageBox.Show("Customer " + txtCustomerID.Text + " has been inserted.", "Adding Customer", MessageBoxButtons.OK, MessageBoxIcon.Information);
-            bnk.insertCustomer(cs);
+
 
             txtName.Text = "";
             txtCustomerID.Text = "";
@@ -53,23 +54,28 @@ namespace FinansDemo
 
             if (dr == DialogResult.Yes)
             {
-                bnk.deleteCustomer(cbxDeleteCustomer.SelectedIndex);
-                MessageBox.Show("This customer has been deleted!", "Deleted", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                bool result = bnk.deleteCustomer(cbxDeleteCustomer.SelectedItem.ToString());
 
-                cbxDeleteCustomer.Items.Clear();
-
-                foreach (Customer cs in bnk.customers)
+                if (result)
                 {
-                    cbxDeleteCustomer.Items.Add(cs.getCustomerId());
+                    cbxDeleteCustomer.Items.RemoveAt(cbxDeleteCustomer.SelectedIndex);
+                    MessageBox.Show("This student has been deleted!", "Deleted", MessageBoxButtons.OK, MessageBoxIcon.Information);
                 }
+                else
+                    MessageBox.Show("This student couldn't be deleted!", "Not Deleted", MessageBoxButtons.OK, MessageBoxIcon.Error);
 
                 if (cbxDeleteCustomer.Items.Count != 0)
                     cbxDeleteCustomer.SelectedIndex = 0;
             }
-
         }
 
-        private void btnAddLoanToCustomer_Click(object sender, EventArgs e)
+        private void button3_Click(object sender, EventArgs e)
+        {
+
+        }
+    }
+
+    private void btnAddLoanToCustomer_Click(object sender, EventArgs e)
         {
 
             Loan loan = new Loan(Convert.ToDouble(txtTime.Text), Convert.ToDouble(txtInterestRate.Text), Convert.ToDouble(txtPresentValue.Text));
@@ -81,9 +87,9 @@ namespace FinansDemo
         }
 
 
-        private void tabControl1_SelectedIndexChanged(object sender, EventArgs e)
+        private void tbcBank_SelectedIndexChanged(object sender, EventArgs e)
         {
-            if (tabControl1.SelectedIndex == 1)
+            if (tbcBank.SelectedIndex == 1)
             {
                 cbxDeleteCustomer.Items.Clear();
 

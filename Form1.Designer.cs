@@ -30,7 +30,7 @@
         {
             components = new System.ComponentModel.Container();
             contextMenuStrip1 = new ContextMenuStrip(components);
-            tabControl1 = new TabControl();
+            tbcBank = new TabControl();
             tabPage1 = new TabPage();
             btncreate = new Button();
             txtAddress = new TextBox();
@@ -73,7 +73,7 @@
             label14 = new Label();
             label12 = new Label();
             cbxUpdateCustomer = new ComboBox();
-            tabControl1.SuspendLayout();
+            tbcBank.SuspendLayout();
             tabPage1.SuspendLayout();
             tabPage2.SuspendLayout();
             tabPage3.SuspendLayout();
@@ -89,22 +89,21 @@
             contextMenuStrip1.Name = "contextMenuStrip1";
             contextMenuStrip1.Size = new Size(61, 4);
             // 
-            // tabControl1
+            // tbcBank
             // 
-            tabControl1.Controls.Add(tabPage1);
-            tabControl1.Controls.Add(tabPage2);
-            tabControl1.Controls.Add(tabPage3);
-            tabControl1.Controls.Add(tabPage4);
-            tabControl1.Controls.Add(tabPage5);
-            tabControl1.Controls.Add(tabPage6);
-            tabControl1.Controls.Add(tabPage7);
-            tabControl1.Location = new Point(14, 16);
-            tabControl1.Margin = new Padding(3, 4, 3, 4);
-            tabControl1.Name = "tabControl1";
-            tabControl1.SelectedIndex = 0;
-            tabControl1.Size = new Size(1007, 551);
-            tabControl1.TabIndex = 1;
-            tabControl1.SelectedIndexChanged += tabControl1_SelectedIndexChanged;
+            tbcBank.Controls.Add(tabPage1);
+            tbcBank.Controls.Add(tabPage2);
+            tbcBank.Controls.Add(tabPage3);
+            tbcBank.Controls.Add(tabPage4);
+            tbcBank.Controls.Add(tabPage5);
+            tbcBank.Controls.Add(tabPage6);
+            tbcBank.Controls.Add(tabPage7);
+            tbcBank.Location = new Point(12, 13);
+            tbcBank.Margin = new Padding(3, 4, 3, 4);
+            tbcBank.Name = "tbcBank";
+            tbcBank.SelectedIndex = 0;
+            tbcBank.Size = new Size(1007, 551);
+            tbcBank.TabIndex = 1;
             // 
             // tabPage1
             // 
@@ -303,7 +302,6 @@
             btnAddLoanToCustomer.TabIndex = 10;
             btnAddLoanToCustomer.Text = "Add loan to customer";
             btnAddLoanToCustomer.UseVisualStyleBackColor = true;
-            btnAddLoanToCustomer.Click += btnAddLoanToCustomer_Click;
             // 
             // radioButton2
             // 
@@ -328,7 +326,6 @@
             radioButton1.TabStop = true;
             radioButton1.Text = "Calculate according to simple interest";
             radioButton1.UseVisualStyleBackColor = true;
-            radioButton1.CheckedChanged += radioButton1_CheckedChanged;
             // 
             // txtInterestRate
             // 
@@ -442,6 +439,7 @@
             button3.TabIndex = 5;
             button3.Text = "Delete Loan from Customer";
             button3.UseVisualStyleBackColor = true;
+            button3.Click += button3_Click;
             // 
             // cbxDltLoanToCs
             // 
@@ -551,11 +549,11 @@
             AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
             ClientSize = new Size(1085, 600);
-            Controls.Add(tabControl1);
+            Controls.Add(tbcBank);
             Margin = new Padding(3, 4, 3, 4);
             Name = "Form1";
             Text = "Bank Form";
-            tabControl1.ResumeLayout(false);
+            tbcBank.ResumeLayout(false);
             tabPage1.ResumeLayout(false);
             tabPage1.PerformLayout();
             tabPage2.ResumeLayout(false);
@@ -574,7 +572,7 @@
         #endregion
 
         private ContextMenuStrip contextMenuStrip1;
-        private TabControl tabControl1;
+        private TabControl tbcBank;
         private TabPage tabPage1;
         private TabPage tabPage2;
         private TabPage tabPage3;
