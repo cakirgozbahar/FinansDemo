@@ -55,7 +55,7 @@ namespace FinansDemo
         }
         public bool deleteCustomer(string idnumber)
         {
-            DataSet ds = makeDBOperations("delete from CustomerTable where CustomerId = '" + idnumber + "'");
+            DataSet ds = makeDBOperations("delete from CustomerTable where Customer_ID = '" + idnumber + "'");
 
             if (ds != null)
             {
@@ -77,7 +77,7 @@ namespace FinansDemo
             {
                 if (number == Convert.ToInt32(cs.getCustomerId()))
                 {
-                    cs.addLoan(loan);
+                    Bank.addLoan(loan);
                     break;
                 }
             }
@@ -93,6 +93,21 @@ namespace FinansDemo
             }
 
             return names;
+        }
+
+        public bool addLoan(Loan loan)
+        {
+            DataSet ds = makeDBOperations("insert into LoanTable(Accumulated_Value, Present_Value, Time, Interest) values('" + loan.accumulated_value + "', '" + loan.present_value + "','" + loan.time + "', '" + loan.i + "')");
+
+            if (ds != null)
+            {
+                return true;
+            }
+            else
+            {
+                return false;
+            }
+            // this.LoanList.Add(loan);
         }
     }
 }
