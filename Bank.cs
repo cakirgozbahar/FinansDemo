@@ -1,5 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Data.SqlClient;
+using System.Data;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -13,6 +15,27 @@ namespace FinansDemo
         public Bank()
         {
             customers = new List<Customer>();
+        }
+        public DataSet makeDBOperations(string query)
+        {
+            DataSet dataSet = null;
+            try
+            {
+                SqlConnection connection = new SqlConnection(@"Data Source=(LocalDB)\MSSQLLocalDB;AttachDbFilename=C:\Users\Şeyda\source\repos\FinansDemo\database.mdf;Integrated Security=True");
+                SqlDataAdapter sqlDataAdapter = new SqlDataAdapter(query, connection);
+
+                connection.Open();
+
+                dataSet = new DataSet();
+                sqlDataAdapter.Fill(dataSet, "Table");
+                connection.Close();
+            }
+            catch
+            {
+                dataSet = null;
+            }
+
+            return dataSet;
         }
 
         public void insertCustomer(Customer cs)

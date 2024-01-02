@@ -11,15 +11,18 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using System.CodeDom;
+using static System.Windows.Forms.VisualStyles.VisualStyleElement.TextBox;
 
 namespace FinansDemo
 {
     public partial class Form1 : Form
     {
+        private Form parent;
         Bank bnk;
-        public Form1()
+        public Form1(Form parent)
         {
             bnk = new Bank();
+            this.parent = parent;
             InitializeComponent();
         }
 

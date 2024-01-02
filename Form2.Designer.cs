@@ -31,8 +31,8 @@
             label1 = new Label();
             label2 = new Label();
             label3 = new Label();
-            textBox1 = new TextBox();
-            textBox2 = new TextBox();
+            txtUserName = new TextBox();
+            txtPassword = new TextBox();
             btnLogIn = new Button();
             SuspendLayout();
             // 
@@ -65,21 +65,22 @@
             label3.TabIndex = 2;
             label3.Text = "Password :";
             // 
-            // textBox1
+            // txtUserName
             // 
-            textBox1.Location = new Point(176, 200);
-            textBox1.Margin = new Padding(3, 4, 3, 4);
-            textBox1.Name = "textBox1";
-            textBox1.Size = new Size(114, 27);
-            textBox1.TabIndex = 3;
+            txtUserName.Location = new Point(176, 200);
+            txtUserName.Margin = new Padding(3, 4, 3, 4);
+            txtUserName.Name = "txtUserName";
+            txtUserName.Size = new Size(114, 27);
+            txtUserName.TabIndex = 3;
             // 
-            // textBox2
+            // txtPassword
             // 
-            textBox2.Location = new Point(176, 280);
-            textBox2.Margin = new Padding(3, 4, 3, 4);
-            textBox2.Name = "textBox2";
-            textBox2.Size = new Size(114, 27);
-            textBox2.TabIndex = 4;
+            txtPassword.Location = new Point(176, 280);
+            txtPassword.Margin = new Padding(3, 4, 3, 4);
+            txtPassword.Name = "txtPassword";
+            txtPassword.PasswordChar = '*';
+            txtPassword.Size = new Size(114, 27);
+            txtPassword.TabIndex = 4;
             // 
             // btnLogIn
             // 
@@ -98,8 +99,8 @@
             AutoScaleMode = AutoScaleMode.Font;
             ClientSize = new Size(470, 600);
             Controls.Add(btnLogIn);
-            Controls.Add(textBox2);
-            Controls.Add(textBox1);
+            Controls.Add(txtPassword);
+            Controls.Add(txtUserName);
             Controls.Add(label3);
             Controls.Add(label2);
             Controls.Add(label1);
@@ -115,8 +116,8 @@
         private Label label1;
         private Label label2;
         private Label label3;
-        private TextBox textBox1;
-        private TextBox textBox2;
+        private TextBox txtUserName;
+        private TextBox txtPassword;
         private Button btnLogIn;
     }
 }

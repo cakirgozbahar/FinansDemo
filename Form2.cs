@@ -30,7 +30,7 @@ namespace FinansDemo
             connection.Close();
 
 
-            if (dataSet.Tables["LogIn"].Rows[0][0].ToString() != "0")
+            if (dataSet.Tables["LogInTable"].Rows[0][0].ToString() != "0")
             {
                 Form1 f = new Form1(this);
                 f.Visible = true;
