@@ -59,10 +59,10 @@ namespace FinansDemo
                 if (result)
                 {
                     cbxDeleteCustomer.Items.RemoveAt(cbxDeleteCustomer.SelectedIndex);
-                    MessageBox.Show("This student has been deleted!", "Deleted", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    MessageBox.Show("This customer has been deleted!", "Deleted", MessageBoxButtons.OK, MessageBoxIcon.Information);
                 }
                 else
-                    MessageBox.Show("This student couldn't be deleted!", "Not Deleted", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    MessageBox.Show("This customer couldn't be deleted!", "Not Deleted", MessageBoxButtons.OK, MessageBoxIcon.Error);
 
                 if (cbxDeleteCustomer.Items.Count != 0)
                     cbxDeleteCustomer.SelectedIndex = 0;
@@ -73,9 +73,7 @@ namespace FinansDemo
         {
 
         }
-    }
-
-    private void btnAddLoanToCustomer_Click(object sender, EventArgs e)
+        private void btnAddLoanToCustomer_Click(object sender, EventArgs e)
         {
 
             Loan loan = new Loan(Convert.ToDouble(txtTime.Text), Convert.ToDouble(txtInterestRate.Text), Convert.ToDouble(txtPresentValue.Text));
@@ -93,17 +91,19 @@ namespace FinansDemo
             {
                 cbxDeleteCustomer.Items.Clear();
 
-                foreach (Customer cs in bnk.customers)
+                DataSet ds = bnk.getAllCustomers();
+
+                int len = ds.Tables[0].Rows.Count;
+
+                for (int i = 0; i < len; i++)
                 {
-                    cbxDeleteCustomer.Items.Add(cs.getCustomerId());
+                    cbxDeleteCustomer.Items.Add(ds.Tables[0].Rows[i]["Number"].ToString());
                 }
 
                 if (cbxDeleteCustomer.Items.Count != 0)
-                {
                     cbxDeleteCustomer.SelectedIndex = 0;
-                }
             }
-            else if (tabControl1.SelectedIndex == 2)
+            else if (tbcBank.SelectedIndex == 2)
             {
                 lsbCustomers.Items.Clear();
 
@@ -112,7 +112,7 @@ namespace FinansDemo
                     lsbCustomers.Items.Add(cs.getCustomerId() + " " + cs.name + " " + cs.ýd.getID() + " " + cs.Address.getText());
                 }
             }
-            else if (tabControl1.SelectedIndex == 3)
+            else if (tbcBank.SelectedIndex == 3)
             {
                 cbxAddLoanToCustomer.Items.Clear();
                 foreach (Customer cs in bnk.customers)
@@ -125,7 +125,7 @@ namespace FinansDemo
                     cbxAddLoanToCustomer.SelectedIndex = 0;
                 }
             }
-            else if (tabControl1.SelectedIndex == 4)
+            else if (tbcBank.SelectedIndex == 4)
             {
                 cbxDltLoanToCs.Items.Clear();
                 cbxDltCsLoans.Items.Clear();
@@ -142,7 +142,7 @@ namespace FinansDemo
                 }
 
             }
-            else if (tabControl1.SelectedIndex == 5)
+            else if (tbcBank.SelectedIndex == 5)
             {
                 lsbLoansOfCustomers.Items.Clear();
 
@@ -169,7 +169,7 @@ namespace FinansDemo
 
                 }
             }
-            else if (tabControl1.SelectedIndex == 6)
+            else if (tbcBank.SelectedIndex == 6)
             {
                 cbxUpdateCustomer.Items.Clear();
                 foreach (Customer cs in bnk.customers)
@@ -187,6 +187,9 @@ namespace FinansDemo
             }
 
         }
+
+
+
 
         private void radioButton1_CheckedChanged(object sender, EventArgs e)
         {

@@ -439,7 +439,6 @@
             button3.TabIndex = 5;
             button3.Text = "Delete Loan from Customer";
             button3.UseVisualStyleBackColor = true;
-            button3.Click += button3_Click;
             // 
             // cbxDltLoanToCs
             // 
@@ -572,7 +571,6 @@
         #endregion
 
         private ContextMenuStrip contextMenuStrip1;
-        private TabControl tbcBank;
         private TabPage tabPage1;
         private TabPage tabPage2;
         private TabPage tabPage3;
@@ -615,5 +613,6 @@
         private Label label14;
         private Label label12;
         private ComboBox cbxUpdateCustomer;
+        private TabControl tbcBank;
     }
 }
