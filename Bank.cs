@@ -71,15 +71,17 @@ namespace FinansDemo
             return makeDBOperations("select * from CustomerTable");
         }
 
-        public void addLoanToCustomer(Loan loan, int number)
+        public bool addLoanToCustomer(Loan loan, int number)
         {
-            foreach (Customer cs in this.customers)
+            DataSet ds = makeDBOperations("insert into CustomerLoanTable(Customer_ID, Accumulated_Value) values('" + number + "', '" + loan.accumulated_value + "')");
+
+            if (ds != null)
             {
-                if (number == Convert.ToInt32(cs.getCustomerId()))
-                {
-                    Bank.addLoan(loan);
-                    break;
-                }
+                return true;
+            }
+            else
+            {
+                return false;
             }
         }
 

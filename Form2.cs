@@ -28,7 +28,7 @@ namespace FinansDemo
             connection.Open();
             sqlDataAdapter.Fill(dataSet, "LogIn");
             connection.Close();
-
+            try { 
 
             if (dataSet.Tables["LogInTable"].Rows[0][0].ToString() != "0")
             {
@@ -43,6 +43,14 @@ namespace FinansDemo
                 txtUserName.Text = "";
                 txtPassword.Text = "";
                 MessageBox.Show("User name or password is invalid!", "Login", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+            }
+            catch
+            {
+
+                Form1 f = new Form1(this);
+                f.Visible = true;
+                this.Visible = false;
             }
         }
     }
